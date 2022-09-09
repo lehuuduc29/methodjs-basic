@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="result"></p>
+    <button type="button" onclick="Insert()">Click me</button>
+    <div>
+        <button type="button" onclick="Convert()">Click me</button>
+    </div>
+</body>
+<script>
+
+    // bai 1
+
+    let myColor = ["Red", "Green", "White", "Black"];
+    function Show() {
+        document.getElementById("result").innerHTML = myColor.join(',')
+        console.log(myColor.join(','))
+    }
+
+    Show()
+
+    // bai 2
+
+    function Insert() {
+        let number = +prompt('nhap vao mot so: ')
+        console.log(typeof number, number)
+        let str = number.toString()
+        console.log(typeof str, str)
+        let myArr = str.split('')
+        console.log(typeof myArr, myArr)
+        let Arr_insert = []
+
+        for (let i = 1; i < myArr.length; i++) {
+            if ((myArr[i - 1] % 2 == 0) && (myArr[i] % 2 == 0)) {
+                Arr_insert.push('-', myArr[i])
+            } else {
+                Arr_insert.push(myArr[i])
+            }
+        }
+        console.log(Arr_insert)
+        console.log(Arr_insert.join(''))
+    }
+
+
+    // bai 3
+
+    function Convert() {
+        let text = prompt('nhap vao mot chuoi: ')
+        // let str = number.toString()
+        console.log(typeof text, text)
+        let myArr = text.split('')
+        console.log(typeof myArr, myArr)
+        let Arr_convert = []
+
+        for (let i = 0; i < myArr.length; i++) {
+            Arr_convert.push(myArr[i].toUpperCase())
+            console.log(Arr_convert)
+            console.log(Arr_convert.join(''))
+        }
+
+
+    }
+
+</script>
+
+</html>
